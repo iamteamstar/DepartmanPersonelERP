@@ -10,5 +10,6 @@ namespace DepartmanProjesi.Models
         public string PersonelAd { get; set; }
         public string PersonelSoyad { get; set; }
         public string PersonelSehir { get; set; }
+        public Departmanlar depart { get;set; }//ilişkili olduğu sınıftan nesne türetilir
     }
 }

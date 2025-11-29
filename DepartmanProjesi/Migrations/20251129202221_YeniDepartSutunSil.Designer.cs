@@ -3,6 +3,7 @@ using DepartmanProjesi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DepartmanProjesi.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20251129202221_YeniDepartSutunSil")]
+    partial class YeniDepartSutunSil
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,30 +61,9 @@ namespace DepartmanProjesi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("departDepID")
-                        .HasColumnType("int");
-
                     b.HasKey("PersonelID");
 
-                    b.HasIndex("departDepID");
-
                     b.ToTable("personels");
-                });
-
-            modelBuilder.Entity("DepartmanProjesi.Models.Personel", b =>
-                {
-                    b.HasOne("DepartmanProjesi.Models.Departmanlar", "depart")
-                        .WithMany("Personels")
-                        .HasForeignKey("departDepID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("depart");
-                });
-
-            modelBuilder.Entity("DepartmanProjesi.Models.Departmanlar", b =>
-                {
-                    b.Navigation("Personels");
                 });
 #pragma warning restore 612, 618
         }
