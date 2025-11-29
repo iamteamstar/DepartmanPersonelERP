@@ -1,8 +1,12 @@
-﻿
+﻿@model DepartmanProjesi.Models.Departmanlar
+
 @{
     ViewData["Title"] = "YeniDepEkle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.DepAd) @*bu labela departman ad sutununda ne yazıyorsa o gelicek(DepAd)*@
+    @Html.TextBoxFor(x=>x.DepAd) @*buraya girilen değerleri departman ad ile eşleştirir *@
 
-<h1>YeniDepEkle</h1>
+</form>
 

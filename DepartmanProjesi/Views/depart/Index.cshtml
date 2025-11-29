@@ -1,1 +1,27 @@
-﻿
+﻿@using DepartmanProjesi.Models;
+@model List<Departmanlar>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table class="table table-bordered" style="margin:10px">
+    <tr>
+        <th>1</th>
+        <th>1</th>
+        <th>1</th>
+        <th>1</th>
+        <th>1</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+            <td>@x.DepID</td>
+            <td>@x.DepAd</td>
+            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="#" class="btn btn-default" style="background-color:blueviolet;color:white">Detaylar</a></td>
+    </tr>
+    }
+</table>
+<a href="/depart/YeniDepEkle" class="btn btn-success">Yeni Departman Ekle</a>
+
