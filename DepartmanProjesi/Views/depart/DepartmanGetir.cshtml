@@ -1,0 +1,17 @@
+﻿@model DepartmanProjesi.Models.Departmanlar
+@{
+    ViewData["Title"] = "DepartmanGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using(Html.BeginForm("DepartmanGuncelle","depart",FormMethod.Post))/* bir tane başlangıç formu oluştur.
+BU form departmanGuncelle IActionResult ını çalıştıracak. 
+Bu DepartmanGuncelle isimleIActionResult, depart isimli Controllerin içinde.
+Bu da form methodu post olduğpunda yani formda bir buton tıklaması olduğunda gerçekleşecek*/
+{
+    @Html.LabelFor(x=>x.DepID)
+    @Html.TextBoxFor(x => x.DepID, new { @class = "form-control" })
+    @Html.LabelFor(x=>x.DepAd)
+    @Html.TextBoxFor(x=>x.DepAd,new {@class="form-control",@style="margin-bottom:10px"} )
+    <button class="btn btn-primary">Güncelle</button>
+}

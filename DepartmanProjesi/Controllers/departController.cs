@@ -32,10 +32,17 @@ namespace DepartmanProjesi.Controllers
             return RedirectToAction("Index");
             
         }
-        public IActionResult DepartmanGetir()//öncelikle güncellemek istediğimiz değerleri sayfamıza taşımamız  gerek
+        public IActionResult DepartmanGetir(int id)//öncelikle güncellemek istediğimiz değerleri sayfamıza taşımamız  gerek
         {
-            return View();
-
+            var depGetir = c.departmanlars.Find(id);
+            return View("DepartmanGetir",depGetir);//veya direkt depGetir
+        }
+        public IActionResult DepartmanGuncelle(Departmanlar d)
+        {
+            var depGuncelle = c.departmanlars.Find(d.DepID);
+            depGuncelle.DepAd= d.DepAd;
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
