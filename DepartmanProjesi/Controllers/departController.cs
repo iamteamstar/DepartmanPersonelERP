@@ -19,7 +19,11 @@ namespace DepartmanProjesi.Controllers
         [HttpPost]//sayfada post işlemi yapılınca çalışacak,parametre alır
         public IActionResult YeniDepEkle(Departmanlar d)
         {
-            return View();
+            c.departmanlars.Add(d);//contextren nesne türetmemiz gerekir
+            c.SaveChanges();//degisiklikleri kaydet
+            return RedirectToAction("Index");//beni bir actiona yönlendir: Index
+           
+           
 
         }
     }
