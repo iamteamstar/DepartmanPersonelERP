@@ -6,18 +6,18 @@
 }
 <table class="table table-bordered" style="margin:10px">
     <tr>
-        <th>1</th>
-        <th>1</th>
-        <th>1</th>
-        <th>1</th>
-        <th>1</th>
+        <th>Departman ID</th>
+        <th>Departman Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detay</th>
     </tr>
     @foreach (var x in Model)
     {
     <tr>
             <td>@x.DepID</td>
             <td>@x.DepAd</td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="/depart/DepartmanSil/@x.DepID" class="btn btn-danger">Sil</a></td>@*/depart/DepartmanSil/@x.DepID : depart controllerda DepartmanSil e gideceksin ama bir id ile gideceksin  *@
             <td><a href="#" class="btn btn-primary">Güncelle</a></td>
             <td><a href="#" class="btn btn-default" style="background-color:blueviolet;color:white">Detaylar</a></td>
     </tr>

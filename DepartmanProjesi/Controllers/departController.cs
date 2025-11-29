@@ -22,8 +22,19 @@ namespace DepartmanProjesi.Controllers
             c.departmanlars.Add(d);//contextren nesne türetmemiz gerekir
             c.SaveChanges();//degisiklikleri kaydet
             return RedirectToAction("Index");//beni bir actiona yönlendir: Index
-           
-           
+        }
+
+        public IActionResult DepartmanSil(int id)
+        {
+            var depSil = c.departmanlars.Find(id);//gönderdiğim id yi bul
+            c.departmanlars.Remove(depSil);//depsilden gelen değerin olduğu satırın tamamını(yani aranan değeri)sil
+            c.SaveChanges();
+            return RedirectToAction("Index");
+            
+        }
+        public IActionResult DepartmanGetir()//öncelikle güncellemek istediğimiz değerleri sayfamıza taşımamız  gerek
+        {
+            return View();
 
         }
     }
