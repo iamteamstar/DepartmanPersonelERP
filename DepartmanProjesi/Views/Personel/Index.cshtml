@@ -1,7 +1,6 @@
 ﻿
 @using DepartmanProjesi.Models;
 @model List<Personel>
-
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,11 +23,11 @@
             <td>@x.PersonelAd</td>
             <td>@x.PersonelSoyad</td>
             <td>@x.PersonelSehir</td>
-            <td>@x.depart</td>
-            <td><a href="#"class="btn btn-danger">Sil</a></td>
-            <td><a href="#"class="btn btn-primary">Güncelle</a></td>
+            <td>@x.depart.DepAd</td>
+            <td><a href="/Personel/PersonelSil/@x.PersonelID"class="btn btn-danger">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@x.PersonelID"class="btn btn-primary">Güncelle</a></td>
             <td><a href="#"class="btn btn-secondary">Detay</a></td>
         </tr>
     }
 </table>
-<a href="#"class="btn btn-success">Personel Ekle</a>
+<a href="/Personel/PersonelEkle"class="btn btn-success">Personel Ekle</a>

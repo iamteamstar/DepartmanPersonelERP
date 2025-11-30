@@ -1,0 +1,18 @@
+﻿@model DepartmanProjesi.Models.Personel
+@{
+    ViewData["Title"] = "PersonelEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.PersonelAd, new { @class = "form-control" ,@style="margin:10px"})
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control", @style = "margin:10px" })
+    @Html.LabelFor(x => x.PersonelSoyad, new { @class = "form-control", @style = "margin:10px" })
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control", @style = "margin:10px" })
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control", @style = "margin:10px" })
+    @Html.LabelFor(x => x.PersonelSehir, new { @class = "form-control", @style = "margin:10px" })
+    @Html.TextBoxFor(x => x.PersonelSehir, new { @class = "form-control", @style = "margin:10px" })
+    @Html.LabelFor(x=>x.DepartID ,new{@class="form-control",@style="margin:10px"})
+    @Html.DropDownListFor(x=>x.depart.DepID,(List<SelectListItem>)ViewBag.dgr,new {@class="form-control",@style="margin:10px"} )
+    <button class="btn btn-success">Personel Ekle</button>
+</form>

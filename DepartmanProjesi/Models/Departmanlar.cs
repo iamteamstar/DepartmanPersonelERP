@@ -8,6 +8,6 @@ namespace DepartmanProjesi.Models
         public int DepID { get; set; }
         public string DepAd { get; set; }
        
-        public List<Personel> Personels { get; set; }//bire çok bir ilişki oluşturduk. Departmanların içinde birden fazla personel bulunabilir anlamına gelir. Muhsaba departmanında hem veli,hem ahmet hem de zeynep çalışabilir 
+        public IList<Personel> Personels { get; set; }//bire çok bir ilişki oluşturduk. Departmanların içinde birden fazla personel bulunabilir anlamına gelir. Muhsaba departmanında hem veli,hem ahmet hem de zeynep çalışabilir 
     }
 }
